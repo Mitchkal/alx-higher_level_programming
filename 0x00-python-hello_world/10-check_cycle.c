@@ -15,10 +15,10 @@ int check_cycle(listint_t *list)
 
 	while (quick != NULL && quick->next != NULL)
 	{
-		if (slow == quick)
-			return (1);
 		quick = quick->next->next;
 		slow = slow->next;
+		if (slow == quick)
+			return (1);
 	}
 	return (0);
 
