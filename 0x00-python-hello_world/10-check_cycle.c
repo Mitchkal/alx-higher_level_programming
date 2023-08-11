@@ -7,9 +7,9 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *slow = list;
-	listint_t *quick = list->next;
+	listint_t *quick = list;
 
-	if (list == NULL || list->next == NULL)
+	if (!list || list->next == NULL)
 		return (0);
 	/*create fast and sow pointer*/
 
