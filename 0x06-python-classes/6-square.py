@@ -28,8 +28,8 @@ class Square:
             size : the int side
             position : the position
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):

@@ -21,7 +21,7 @@ class Square:
         Attributes:
             size : the int side
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
