@@ -14,7 +14,12 @@ class Square:
         position: the position
     Functions:
         area(self)
-        __init__(self, size=0, position=(0,0))
+        __init__(self, size=0, position=(0,0))i
+        position(self)
+        position(self, value)
+        my_print(self)
+        size(self)
+        size(self, value)
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -56,20 +61,20 @@ class Square:
         Returns:
             the position
         """
-        return (self.__position)
+        return self.__position
 
     @position.setter
     def position(self, value):
         """
         sets the position of the square
-        Arguments:
+
+        Args:
             value : the coordinates
         """
         if type(value) is not tuple or len(value) != 2 \
            or type(value[0]) is not int or type(value[1]) \
            is not int or value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive \
-                            integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
