@@ -7,6 +7,7 @@ arg:
     width: int
     height: int
     number_of_instnaces:int
+also returns new class instance via square method.
 
 Methods:
     area(self) gets area
@@ -18,7 +19,7 @@ Methods:
     __str__(self)
     __repr__(self)
     __del__(self)
-    square(cls, size=0)
+    square(cls, size)
     ststic method:
          bigger_or_equal(rect_1, rect_2)
 
@@ -127,14 +128,13 @@ class Rectangle:
         elif not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         else:
-            if rect_2.area() > rect_1.area():
-                return rect_2
-            else:
+            if rect_1.area() >= rect_2.area():
                 return rect_1
+            else:
+                return rect_2
 
     @classmethod
     def square(cls, size=0):
-        """
-        returns rectangle with width = height= size
-        """
+        """returns new rectangle with equal sides"""
         return cls(size, size)
+
