@@ -1,4 +1,4 @@
-#!/us /bin/python3
+#!/usr/bin/python3
 """
 Module 9-rectangle
 defines rectangle class wih private
