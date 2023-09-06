@@ -1,0 +1,55 @@
+#Run with python3 -m doctest -v ./tests/0-add_integer.txt
+
+Begin by:
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Sucesses:
+
+signed and unsigned numbers:
+	>>> add_integer(2)
+	100
+	>>> add_integer(-1)
+	97
+	>>> add_integer(1, 2)
+	3
+
+Fails:
+
+Type Errors:
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer('a')
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+	>>> add_integer(1,2,3)
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+nonint arguments:
+
+	>>> add_integer(1, [1, 2, 3])
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+	
+Name Errors:
+
+	>>> add_integer(1, none)
+	Traceback (most recent call last):
+	...
+	NameError: name 'none' is not defined
+	>>> add_integer(none)
+	Traceback (most recent call last):
+	NameError: name 'none' is not defined
+
+
+value errors
+	>>> add_integer(float("Nan"))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
