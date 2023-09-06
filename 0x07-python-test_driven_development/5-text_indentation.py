@@ -1,4 +1,4 @@
-#!/sr/bin/python3
+#!/usr/bin/python3
 """
 module 5-text_indentation
  prints a text with 2 new lines
