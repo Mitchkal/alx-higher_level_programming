@@ -19,4 +19,4 @@ def text_indentation(text):
     strings = [line.strip(' ') for line in text.split('\n')]
     final = "\n".join(strings)
 
-    print(final, end = "")
+    print(final, end="")
