@@ -1,0 +1,71 @@
+>>> MyList = __import__('1-my_list').MyList
+
+tests:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(4)
+	>>> my_list.append(1)
+	>>> my_list.append(10)
+	>>> my_list.append(9)
+	>>> my_list.append(0)
+	>>> my_list.append(7)
+	>>> my_list.append(5)
+	>>> my_list.print_sorted()
+	[0, 1, 1, 2, 3, 4, 5, 7, 9, 10]
+
+	>>> blank = MyList()
+	>>> blank.print_sorted()
+	[]
+
+	>>> blank = MyList()
+	>>> blank.append(-1)
+	>>> blank.append(1)
+	>>> blank.append(-0)
+	>>> blank.print_sorted()
+	[-1, 0, 1]
+
+	>>> one = MyList()
+	>>> one.append(1)
+	>>> one.print_sorted()
+	[1]
+
+	>>> two = MyList()
+	>>> two.append(1)
+	>>> two.append(2)
+	>>> two.append(3)
+	>>> two.append(-1)
+	>>> id(two) is not id(two.print_sorted())
+	[-1, 1, 2, 3]
+	True
+
+	>>> type(MyList())
+	<class '1-my_list.MyList'>
+
+	>>> two = MyList()
+	>>> two.append(1)
+	>>> two.append(2)
+	>>> two.append(3)
+	>>> two.append(-1)
+	>>> id(two) is not id(two.print_sorted())
+	[-1, 1, 2, 3]
+	True
+
+	>>> type(MyList())
+	<class '1-my_list.MyList'>
+
+	>>> isinstance(MyList, list)
+	False
+
+	>>> isinstance(MyList, object)
+	True
+
+	>>> issubclass(MyList, list)
+	True
+
+	>>> 'print_sorted' in dir(MyList)
+	True
+
+
