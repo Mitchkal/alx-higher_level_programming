@@ -20,6 +20,9 @@ tests:
 	>>> blank.print_sorted()
 	[]
 
+	>>> print(blank)
+	[]
+
 	>>> blank = MyList()
 	>>> blank.append(-1)
 	>>> blank.append(1)
@@ -68,4 +71,36 @@ tests:
 	>>> 'print_sorted' in dir(MyList)
 	True
 
+	>>> wrong = MyList()
+	>>> wrong.append("hgello")
+	>>> wrong.append(1)
+	>>> wrong.append(4)
+	>>> wrong.append(2)
+	>>> wrong.print_sorted()
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'int' and 'str'
+
+	>>> negatives = MyList()
+	>>> negatives.append(-10)
+	>>> negatives.append(-1)
+	>>> negatives.append(-5)
+	>>> negatives.append(0)
+	>>> negatives.print_sorted()
+	[-10, -5, -1, 0]
+
+	>>> negatives.append(True)
+	>>> negatives.print_sorted()
+	[-10, -5, -1, 0, True]
+
+	>>> negatives.append(False)
+	>>> negatives.print_sorted()
+	[-10, -5, -1, 0, False, True]
+
+	>>> numeros = MyList()
+	>>> numeros.append(2.5)
+	>>> numeros.append(4.1)
+	>>> numeros.append(1.1)
+	>>> numeros.print_sorted()
+	[1.1, 2.5, 4.1]
 

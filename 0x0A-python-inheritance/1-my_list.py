@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""module1-my_list- inherits from list
+"""module1-my_list-
+inherits from list
 """
 
 
