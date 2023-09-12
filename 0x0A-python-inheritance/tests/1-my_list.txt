@@ -104,3 +104,15 @@ tests:
 	>>> numeros.print_sorted()
 	[1.1, 2.5, 4.1]
 
+	>>> lister = MyList("Phrase")
+	>>> lister
+	['P', 'h', 'r', 'a', 's', 'e']
+	>>> lister.print_sorted()
+	['P', 'a', 'e', 'h', 'r', 's']
+
+	>>> integers = MyList([1, 2, 3])
+	>>> new = integers.print_sorted()
+	[1, 2, 3]
+	>>> integers is new
+	False
+
