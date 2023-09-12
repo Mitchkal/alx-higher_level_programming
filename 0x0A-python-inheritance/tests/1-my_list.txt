@@ -113,6 +113,6 @@ tests:
 	>>> integers = MyList([1, 2, 3])
 	>>> new = integers.print_sorted()
 	[1, 2, 3]
-	>>> integers is new
+	>>> integers == new
 	False
 
