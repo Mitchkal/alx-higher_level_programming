@@ -31,12 +31,12 @@ class TestObjects(unittest.TestCase):
 
     def test_class_attributes(self):
         """tests class attributes"""
-        r = Rectangle(10, 20, 5, 5, 1)
-        self.assertEqual(r.width, 10)
-        self.assertEqual(r.height, 20)
-        self.assertEqual(r.x, 5)
-        self.assertEqual(r.y, 5)
-        self.assertEqual(r.id, 1)
+        r = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.y, 4)
+        self.assertEqual(r.id, 5)
 
     def test_width_setter(self):
         """tests width setter"""
@@ -69,12 +69,15 @@ class TestObjects(unittest.TestCase):
             r.width = 'z'
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r.width = -1
+            Rectangle(-1, 2)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r.width = 0
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r.height = '2'
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r.height = -1
+            Rectangle(1, -2)
+            Rectangle(1, 0)
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r.height = 0
 
@@ -83,21 +86,27 @@ class TestObjects(unittest.TestCase):
         r = Rectangle(10, 20)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r.x = 'a'
+            Rectangle(1, 2, "3")
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             r.x = -1
+            Rectangle(1, 2, -3)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r.y = 'b'
+            Rectangle(1, 2, "3")
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r.y = -2
+            Rectangle(1, 2, 3, -4)
 
     def test_correct_class(self):
         """verifies the correct class"""
         self.assertEqual(type(Rectangle(3, 4)), Rectangle)
 
     def test_area(self):
-        """tests correct area"""
+        """tests area() method"""
         self.assertEqual(Rectangle(3, 2).area(), 6)
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
+        R = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(R.area(), 2)
 
     def test_access(self):
         """ensures unaccessibility of private attributes"""
@@ -138,8 +147,8 @@ class TestObjects(unittest.TestCase):
         expected_output = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(output, expected_output)
 
-    def test_string(self):
-        """tests string equivalent"""
+    def test__str__(self):
+        """tests __str__"""
         r1 = Rectangle(4, 6, 2, 1, 12)
         expected_output = "[Rectangle] (12) 2/1 - 4/6"
         output = str(r1)

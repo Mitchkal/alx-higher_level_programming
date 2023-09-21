@@ -33,6 +33,19 @@ class Testbase(unittest.TestCase):
         self.assertTrue(Base(), self.id == 1)
         self.assertTrue(Base(), self.id == 2)
 
+    def test_automatic_id(self):
+        """tests for ID increment"""
+        Base.__nb_objects = 0
+        object1 = Base()
+        object2 = Base()
+        self.assertEqual(object1.id, 1)
+        self.assertEqual(object2.id, 2)
+
+    def test_id_assignemtn(self):
+        """tests saving ID passed"""
+        obj = Base(89)
+        self.assertEqual(obj.id, 89)
+
     def test_access(self):
         """tests for private access"""
         with self.assertRaises(AttributeError):
@@ -53,6 +66,8 @@ class Testbase(unittest.TestCase):
         Test non, empty dict,
         given dict
         """
+        self.assertTrue(Base.to_json_string(None), '[]')
+        self.assertTrue(Base.to_json_string([]), '[]')
         d0 = None
         strd1 = Base.to_json_string([d0])
         self.assertTrue(type(strd1) == str)

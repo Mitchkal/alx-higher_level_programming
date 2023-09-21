@@ -31,13 +31,13 @@ class TestObjects(unittest.TestCase):
 
     def test_class_attributes(self):
         """tests class attributes"""
-        r = Square(10, 5, 5, 1)
-        self.assertEqual(r.width, 10)
-        self.assertEqual(r.height, 10)
-        self.assertEqual(r.size, 10)
-        self.assertEqual(r.x, 5)
-        self.assertEqual(r.y, 5)
-        self.assertEqual(r.id, 1)
+        r = Square(1, 2, 3, 4)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 1)
+        self.assertEqual(r.size, 1)
+        self.assertEqual(r.x, 2)
+        self.assertEqual(r.y, 3)
+        self.assertEqual(r.id, 4)
 
     def test_width_setter(self):
         """tests width setter"""
@@ -70,22 +70,28 @@ class TestObjects(unittest.TestCase):
         r = Square(10)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r.width = 'z'
+            Square("1")
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r.width = -1
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r.width = 0
+            Square(0)
+            Square(-1)
 
     def test_x_y(self):
         """tests coordinate validation"""
         r = Square(10, 20)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r.x = 'a'
+            Square(1, "2")
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             r.x = -1
+            Square(1, -2)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            r.y = 'b'
+            Square(1, 2, "3")
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r.y = -2
+            Square(1, 2, -3)
 
     def test_correct_class(self):
         """verifies the correct class"""
@@ -133,8 +139,8 @@ class TestObjects(unittest.TestCase):
         expected_output = "\n\n  ##\n  ##\n"
         self.assertEqual(output, expected_output)
 
-    def test_string(self):
-        """tests string equivalent"""
+    def test_str(self):
+        """tests __str__  equivalent"""
         r1 = Square(1, 2, 3, 44)
         r1.size = 16
         expected_output = "[Square] (44) 2/3 - 16"

@@ -6,6 +6,7 @@ contains class BaSE
 
 import json
 import os
+import turtle
 
 
 class Base:
@@ -85,5 +86,45 @@ class Base:
 
         json_list = cls.from_json_string(json_string)
         instances = [cls.create(**dict_data) for dict_data in json_list]
-
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws the list of recs and squares"""
+        screen = turtle.Screen()
+        screen.title("drawing the rectangles and squares")
+
+        c = turtle.Turtle()
+
+        def draw_rectangle(rectangle):
+            """draws the rectangle"""
+            c.penup()
+            c.goto(rectangle.x, rectangle.y)
+            c.pendown()
+            c.forward(rectangle.width)
+            c.left(90)
+            c.forward(rectangle.height)
+            c.left(90)
+            c.forward(rectangle.width)
+            c.left(90)
+            c.forward(rectangle.height)
+            c.left(90)
+            c.penup()
+
+        def draw_square(square):
+            """draws the square"""
+            c.penup()
+            c.goto(square.x, square.y)
+            c.pendown()
+            for i in range(4):
+                c.forward(square.size)
+                c.left(90)
+            c.penup()
+
+        for rectangle in list_rectangles:
+            draw_rectangle(rectangle)
+
+        for square in list_squares:
+            draw_square(square)
+
+        screen.exitonclick()
