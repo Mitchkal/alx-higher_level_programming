@@ -19,6 +19,19 @@ class Square(Rectangle):
         """initializes class square"""
         super().__init__(size, size, x, y, id)
 
+    def to_csv_row(self):
+        """serializes attributes to csv"""
+        return [str(self.id), str(self.size), str(self.x),
+                str(self.y)]
+
+    @classmethod
+    def from_csv_row(cls, csv_row):
+        """deserializes csv to instances"""
+        if len(csv_row) != 4:
+            raise ValueError("CSV row should contain 4 values")
+        obj_id, size, x, y = map(int, csv_row)
+        return cls(size, x, y, obj_id)
+
     @property
     def size(self):
         """gets thesquare size"""

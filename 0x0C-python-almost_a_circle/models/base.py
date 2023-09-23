@@ -7,6 +7,7 @@ contains class BaSE
 import json
 import os
 import turtle
+import csv
 
 
 class Base:
@@ -86,6 +87,37 @@ class Base:
 
         json_list = cls.from_json_string(json_string)
         instances = [cls.create(**dict_data) for dict_data in json_list]
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes objects to CSV"""
+        if list_objs is None:
+            list_objs = []
+
+        file_name = cls.__name__ + ".csv"
+
+        with open(file_name, 'w', newline='') as f:
+            writer = csv.writer(f)
+            for obj in list_objs:
+                data = obj.to_csv_row()
+                writer.writerow(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserialize objects from csv file"""
+        file_name = cls.__name__ + ".csv"
+        instances = []
+
+        try:
+            with open(file_name, 'r', newline='') as f:
+                reader = csv.reader(f)
+                for row in reader:
+                    obj_data = cls.from_csv_row(row)
+                    instances.append(obj_data)
+
+        except FileNotFoundError:
+            pass
         return instances
 
     @staticmethod

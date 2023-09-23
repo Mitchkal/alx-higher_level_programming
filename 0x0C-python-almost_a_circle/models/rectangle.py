@@ -36,6 +36,19 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_csv_row(self):
+        """serializes objects attrs to csv row"""
+        return [str(self.id), str(self.width), str(self.height),
+                str(self.x), str(self.y)]
+
+    @classmethod
+    def from_csv_row(cls, csv_row):
+        """deserializes from csv row and creates instance"""
+        if len(csv_row) != 5:
+            raise ValueError("CSV row should contain 5 values")
+        obj_id, width, height, x, y = map(int, csv_row)
+        return cls(width, height, x, y, obj_id)
+
     @property
     def width(self):
         """gets the width"""

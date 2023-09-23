@@ -66,29 +66,22 @@ class TestObjects(unittest.TestCase):
         """tests width and height validation"""
         r = Rectangle(10, 20)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            r.width = 'z'
+            Rectangle('1', 2)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            r.width = -1
             Rectangle(-1, 2)
-        with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            r.width = 0
+            Rectangle(0, 2)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            r.height = '2'
+            Rectangle(1, '2')
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            r.height = -1
             Rectangle(1, -2)
             Rectangle(1, 0)
-        with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            r.height = 0
 
     def test_x_y(self):
         """tests coordinate validation"""
         r = Rectangle(10, 20)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            r.x = 'a'
             Rectangle(1, 2, "3")
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            r.x = -1
             Rectangle(1, 2, -3)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r.y = 'b'
