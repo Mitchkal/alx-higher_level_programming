@@ -1,3 +1,3 @@
---create database hbtn_0c_0 if not exist
+-- create database if non-existent
 
-CREATE DATABASE IF NOT EXISTS 'hbtn_0c_0';
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
