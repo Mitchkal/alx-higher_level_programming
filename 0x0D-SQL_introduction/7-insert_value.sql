@@ -1,3 +1,3 @@
---inserts new row in first_table
-USE hbtn_0c_0;
-INSERT INTO `first_table` (`id`, `name`) VALUES (89, `Best School`);
+-- insert a new row of data in this table in this database
+
+INSERT INTO `first_table` (`id`, `name`) VALUES (89, 'Best School');
