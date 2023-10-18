@@ -1,3 +1,5 @@
---list records of 'second_table
-USE hbtn_0c_0;
+-- display score and name fields in table
+-- ordered from greatest to least
+
 SELECT score, name FROM second_table ORDER BY score DESC;
+
