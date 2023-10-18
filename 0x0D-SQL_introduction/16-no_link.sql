@@ -1,6 +1,3 @@
---list all records of second_table
-USE hbtn_0c_0;
-SELECT score, name
-FROM second_table
-WHERE name IS NOT NULL
-ORDER BY score DESC;
+-- Lists all records of second_table_
+
+SELECT score, name FROM second_table WHERE name IS NOT NULL AND name != '' ORDER BY score DESC;
