@@ -7,7 +7,7 @@ let height = 0;
 let width = 0;
 let output = '';
 if (isNaN(size)) {
-	console.log('Missing size');
+  console.log('Missing size');
 } else {
   for (height = 0; height < size; height++) {
     for (width = 0; width < size; width++) {
