@@ -11,7 +11,7 @@ if (isNaN(size)) {
 } else {
   for (height = 0; height < size; height++) {
     for (width = 0; width < size; width++) {
-      output += 'x';
+      output += 'X';
     }
     console.log(output);
     output = '';
