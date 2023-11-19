@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""
+module 0-select_stats
+parameters: username, password, dbname
+"""
+
 
 import MySQLdb
 import sys
-
-"""
-module 0-select_stats
-"""
 
 
 def list_states(username, password, database_name):
