@@ -31,7 +31,7 @@ def state_fetch_first(username, password, database, state_name):
     if state:
         print(state.id)
     else:
-        print("Nothing")
+        print("Not found")
 
     session.close()
 
