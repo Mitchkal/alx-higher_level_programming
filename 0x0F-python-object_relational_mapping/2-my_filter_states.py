@@ -7,7 +7,7 @@ Searches for state in db
 
 
 import sys
-import mysqldb
+import MySQLdb
 
 
 def filter_state(username, password, database_name, state_name):
