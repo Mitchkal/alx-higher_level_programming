@@ -20,7 +20,7 @@ def filter_state(username, password, database_name, state_name):
 
     cur = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY\
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY\
     states.id".format(state_name)
 
     cur.execute(query)
