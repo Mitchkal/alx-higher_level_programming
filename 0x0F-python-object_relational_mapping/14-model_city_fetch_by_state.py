@@ -26,7 +26,7 @@ def fetch_state(username, password, database_name):
 
     for city in session.query(State.name, City.id, City.name).filter(
             State.id == City.state_id).order_by(City.id):
-        print('{}: {} {}'.format(city[0], city[1], city[2]))
+        print('{}: ({}) {}'.format(city[0], city[1], city[2]))
 
     session.close()
 
