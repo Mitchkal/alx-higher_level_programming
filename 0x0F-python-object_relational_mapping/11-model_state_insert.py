@@ -25,7 +25,7 @@ def state_insert(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    lousiana = State(name="Lousiana")
+    lousiana = State(name="Louisiana")
     session.add(lousiana)
     session.commit()
 
