@@ -1,15 +1,15 @@
 #!/usr/bin/python3
+"""
+module 14-module_city_fetch_by_state
+lists all cities in db
+"""
+
 
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from model_city import City
-
-"""
-module 14-model_city_fetch_by_state
-lists all cities in db
-"""
 
 
 def fetch_state(username, password, database_name):

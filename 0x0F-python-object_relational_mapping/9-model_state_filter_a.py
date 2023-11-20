@@ -1,12 +1,14 @@
 #!/usr/bin/python3
+"""
+module 9-model_state_a
+lists state objxets from db with a
+"""
+
+
 import sys
 from sqlalchemy import (create_engine)
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-"""
-module 8-model_state_a
-lists state objects from dtatabase with a
-"""
 
 
 def state_a(username, password, database):

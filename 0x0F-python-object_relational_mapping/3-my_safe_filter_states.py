@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
-import sys
-import MySQLdb
-
 """
 module safe filter state
 Searches for state in db
 safe from SQL injection
 """
+
+
+import sys
+import MySQLdb
 
 
 def filter_state(username, password, database_name, state_name):

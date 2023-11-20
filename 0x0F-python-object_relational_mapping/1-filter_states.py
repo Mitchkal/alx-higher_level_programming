@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
-import MySQLdb
-import sys
 """
 module 1-filter_states
 filters staes starting with n
 """
+
+
+import sys
+import MySQLdb
 
 
 def filter_states(username, password, database_name):

@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+
+"""
+module 11-model_state_insert
+insert and retruns id of state
+"""
+
+
 import sys
 from sqlalchemy import (create_engine)
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-"""
-module 11-model_state_insert
-inserts and returns id of state
-"""
 
 
 def state_insert(username, password, database):

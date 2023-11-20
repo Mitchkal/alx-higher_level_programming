@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-import sys
-from sqlalchemy import (create_engine)
-from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
+
 """
 module 10-model_search state
 finds and returns id of searched state
 """
+
+
+import sys
+from sqlalchemy import (create_engine)
+from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
 
 
 def state_fetch_first(username, password, database, state_name):

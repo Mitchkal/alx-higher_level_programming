@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+
+
+"""
+module  13-module_state_delete_a
+deletes state object from db with a
+"""
+
+
 import sys
 from sqlalchemy import (create_engine)
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-"""
-module 13-model_state_delete_a
-deletes state objects from dtatabase with a
-"""
 
 
 def delete_state(username, password, database):

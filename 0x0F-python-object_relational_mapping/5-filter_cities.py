@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
-import sys
-import MySQLdb
-
 """
 module 5-cities_by_state
 lists all cities in db
 """
+
+
+import MySQLdb
+import sys
 
 
 def filter_state(username, password, database_name, state_name):

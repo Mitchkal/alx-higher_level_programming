@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+
+"""
+module 8-model_state_fetch_alll
+lists first state objects from db
+"""
+
+
 import sys
 from sqlalchemy import (create_engine)
 from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
-"""
-module 8-model_state_fetch_all
-lists first state objects from dtatabase
-"""
+from sqlalchemy.orm import sessionmake
 
 
 def state_fetch_first(username, password, database):

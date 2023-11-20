@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
-import sys
-import MySQLdb
-
 """
 module filter state
 Searches for state in db
 """
+
+
+import sys
+import mysqldb
 
 
 def filter_state(username, password, database_name, state_name):

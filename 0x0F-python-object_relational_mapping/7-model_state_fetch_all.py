@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-import sys
-from sqlalchemy import (create_engine)
-from model_state import Base, State
-from sqlalchemy.orm import Session
 """
 module7-model_state_fetch_all
 lists all state objects from dtatabase
 """
+
+
+import sys
+from sqlalchemy import (create_engine)
+from model_state import Base, State
+from sqlalchemy.orm import Session
 
 
 def state_fetch_all(username, password, database):

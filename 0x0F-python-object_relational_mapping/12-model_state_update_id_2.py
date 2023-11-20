@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+
+"""
+module 12-model_state_update
+updatesstate objects in database
+"""
+
+
 import sys
 from sqlalchemy import (create_engine)
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-"""
-module 12-model_state_updat
-updates state objects in dtatabase
-"""
 
 
 def state_update(username, password, database):
