@@ -9,7 +9,7 @@ lists first state objects from db
 import sys
 from sqlalchemy import (create_engine)
 from model_state import Base, State
-from sqlalchemy.orm import sessionmake
+from sqlalchemy.orm import sessionmaker
 
 
 def state_fetch_first(username, password, database):
