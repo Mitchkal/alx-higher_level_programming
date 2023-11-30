@@ -7,4 +7,4 @@ response=$(curl -sI "$url")
 
 content_length=$(echo "$response" | grep -i 'Content-Length' | awk '{print $2}' | tr -d '\r\n')
 
-echo $content_length
+echo "$content_length"
