@@ -20,7 +20,7 @@ def post_email(url, email):
     with urllib.request.urlopen(req) as response:
         content = response.read().decode('utf-8')
 
-        print("Your email is: {}".format(content))
+        print(content)
 
 
 if __name__ == "__main__":
